@@ -20,20 +20,23 @@ function setCookie(cname,cvalue,exdays) {
     }
     return "";
   }
-  
+  var user;
   function checkCookie() {
-    var user = getCookie("username");
+   user = getCookie("username");
     if (user != "") {
-      user = prompt("Welcome again " + user + "Please enter your new name:","");
+      user = prompt("Welcome again " + user + " Please enter your new name:","");
        if (user != "" && user != null) {
          setCookie("username", user, 30);
-         document.getElementById("#cookie").innerHTML = " Your name saved by the cookie right now is: " + user;
        }
     } else {
        user = prompt("Please enter your name:","");
        if (user != "" && user != null) {
          setCookie("username", user, 30);
-         document.getElementById("cookie").innerHTML = " Your name saved by the cookie right now is: " + user;
+         add();
        }
     }
+  }
+
+  function add(){
+    document.getElementById("cookie").innerHTML = " Your name saved by the cookie right now is: " + user;
   }
