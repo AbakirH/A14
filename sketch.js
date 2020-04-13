@@ -24,15 +24,16 @@ function setCookie(cname,cvalue,exdays) {
   function checkCookie() {
     var user = getCookie("username");
     if (user != "") {
-      alert("Welcome again " + user);
-      user = prompt("Please enter your new name:","");
+      user = prompt("Welcome again " + user + "Please enter your new name:","");
        if (user != "" && user != null) {
          setCookie("username", user, 30);
+         document.getElementById("#cookie").innerHTML = " Your name saved by the cookie right now is: " + user;
        }
     } else {
        user = prompt("Please enter your name:","");
        if (user != "" && user != null) {
          setCookie("username", user, 30);
+         document.getElementById("cookie").innerHTML = " Your name saved by the cookie right now is: " + user;
        }
     }
   }
