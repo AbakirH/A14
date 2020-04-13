@@ -38,5 +38,6 @@ function setCookie(cname,cvalue,exdays) {
   }
 
   function add(){
+    user = getCookie("username");
     document.getElementById("cookie").innerHTML = " Your name saved by the cookie right now is: " + user;
   }
