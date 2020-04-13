@@ -20,9 +20,9 @@ function setCookie(cname,cvalue,exdays) {
     }
     return "";
   }
-  var user;
+  var user = getCookie("username");
   function checkCookie() {
-   user = getCookie("username");
+   
     if (user != "") {
       user = prompt("Welcome again " + user + " Please enter your new name:","");
        if (user != "" && user != null) {
@@ -32,7 +32,7 @@ function setCookie(cname,cvalue,exdays) {
        user = prompt("Please enter your name:","");
        if (user != "" && user != null) {
          setCookie("username", user, 30);
-         add();
+        add();
        }
     }
   }
